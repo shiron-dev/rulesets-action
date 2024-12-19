@@ -1,0 +1,28 @@
+name: Main CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  all-status-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs:
+      - check
+    steps:
+      - name: All status check
+        run: echo "All status check passed"
+
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check all-status-check
+        run: |
+          exit 1
