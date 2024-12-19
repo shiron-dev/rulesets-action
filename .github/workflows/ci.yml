@@ -31,6 +31,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      - name: wait 1 minute
+        run: sleep 60
       - name: Check all-status-check
         run: |
           exit 0
