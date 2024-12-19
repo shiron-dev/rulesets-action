@@ -26,13 +26,3 @@ jobs:
       - name: Check all-status-check
         run: |
           exit 1
-
-  ci-req-check:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - name: wait 1 minute
-        run: sleep 60
-      - name: Check all-status-check
-        run: |
-          exit 0
